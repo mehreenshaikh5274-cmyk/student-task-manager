@@ -1,6 +1,7 @@
 let tasks = [];
 
 function addTask() {
+
     const taskInput = document.getElementById("taskInput");
     const taskText = taskInput.value.trim();
 
@@ -23,6 +24,7 @@ function addTask() {
 }
 
 function displayTasks() {
+
     const taskList = document.getElementById("taskList");
 
     taskList.innerHTML = "";
@@ -40,27 +42,21 @@ function displayTasks() {
         taskDiv.innerHTML = `
             <span>${task.text}</span>
 
-            <div class="task-buttons">
-
-                <button
-                    class="complete-btn"
-                    onclick="completeTask(${task.id})">
+            <div>
+                <button onclick="completeTask(${task.id})">
                     ${task.completed ? "Undo" : "Complete"}
                 </button>
 
-                <button
-                    class="delete-btn"
-                    onclick="deleteTask(${task.id})">
+                <button onclick="deleteTask(${task.id})">
                     Delete
                 </button>
-
             </div>
         `;
 
         taskList.appendChild(taskDiv);
     });
 
-    updateTaskCount();
+    updateCounts();
 }
 
 function completeTask(id) {
@@ -85,18 +81,20 @@ function deleteTask(id) {
     displayTasks();
 }
 
-function updateTaskCount() {
+function updateCounts() {
 
     // Total number of tasks
     document.getElementById("totalTasks").textContent = tasks.length;
 
-    // Number of completed tasks
+    // Total number of completed tasks
     let completedCount = 0;
 
     tasks.forEach(function(task) {
-        if (task.completed) {
+
+        if (task.completed === true) {
             completedCount++;
         }
+
     });
 
     document.getElementById("completedTasks").textContent = completedCount;
