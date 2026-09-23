@@ -1,10 +1,7 @@
-
 let tasks = [];
 
 function addTask() {
-
     const taskInput = document.getElementById("taskInput");
-
     const taskText = taskInput.value.trim();
 
     if (taskText === "") {
@@ -26,7 +23,6 @@ function addTask() {
 }
 
 function displayTasks() {
-
     const taskList = document.getElementById("taskList");
 
     taskList.innerHTML = "";
@@ -91,34 +87,11 @@ function deleteTask(id) {
 
 function updateTaskCount() {
 
-    const totalTasks = document.getElementById("totalTasks");
-
-    const completedTasks = document.getElementById("completedTasks");
-
-    totalTasks.textContent = tasks.length;
+    document.getElementById("totalTasks").textContent = tasks.length;
 
     const completed = tasks.filter(function(task) {
         return task.completed;
     });
 
-    completedTasks.textContent = completed.length;
-}
-
-function addTask() {
-
-    let taskInput = document.getElementById("taskInput");
-    let taskText = taskInput.value;
-
-    if (taskText === "") {
-        alert("Please enter a task");
-        return;
-    }
-
-    let li = document.createElement("li");
-
-    li.textContent = taskText;
-
-    document.getElementById("taskList").appendChild(li);
-
-    taskInput.value = "";
+    document.getElementById("completedTasks").textContent = completed.length;
 }
