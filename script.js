@@ -42,13 +42,13 @@ function displayTasks() {
 
             <div class="task-buttons">
 
-                <button 
+                <button
                     class="complete-btn"
                     onclick="completeTask(${task.id})">
                     ${task.completed ? "Undo" : "Complete"}
                 </button>
 
-                <button 
+                <button
                     class="delete-btn"
                     onclick="deleteTask(${task.id})">
                     Delete
@@ -87,11 +87,17 @@ function deleteTask(id) {
 
 function updateTaskCount() {
 
+    // Total number of tasks
     document.getElementById("totalTasks").textContent = tasks.length;
 
-    const completed = tasks.filter(function(task) {
-        return task.completed;
+    // Number of completed tasks
+    let completedCount = 0;
+
+    tasks.forEach(function(task) {
+        if (task.completed) {
+            completedCount++;
+        }
     });
 
-    document.getElementById("completedTasks").textContent = completed.length;
+    document.getElementById("completedTasks").textContent = completedCount;
 }
