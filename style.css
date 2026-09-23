@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.task-input {
+    display: flex;
+    gap: 10px;
+}
+
+.task-input input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.task-input button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.task-input button:hover {
+    background: #0056b3;
+}
+
+.task-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 0 15px;
+    padding: 12px;
+    background: #f1f1f1;
+    border-radius: 6px;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin-top: 10px;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.task.completed span {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.complete-btn {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 7px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 7px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+
+    .task-input {
+        flex-direction: column;
+    }
+
+    .task-input button {
+        width: 100%;
+    }
+
+    .task {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .task-buttons {
+        width: 100%;
+    }
+}
